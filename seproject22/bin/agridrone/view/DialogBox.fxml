@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="648.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agridrone.view.DialogController">
+   <children>
+      <BorderPane layoutX="100.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <buttons>
+                <Button fx:id="dialogCancelButton" mnemonicParsing="false" onAction="#cancelDialog" text="Cancel" />
+                  <Button fx:id="applyButton" mnemonicParsing="false" text="Apply" />
+              </buttons>
+               <BorderPane.margin>
+                  <Insets right="10.0" />
+               </BorderPane.margin>
+            </ButtonBar>
+         </bottom>
+         <center>
+            <TabPane fx:id="dialogContent" prefHeight="540.0" prefWidth="626.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab fx:id="renameTab" text="Rename">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label text="Rename">
+                                       <VBox.margin>
+                                          <Insets left="30.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="renameBox">
+                                       <VBox.margin>
+                                          <Insets left="30.0" right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label fx:id="renameNull" text="Please enter a name!" textFill="RED" visible="false">
+                                       <VBox.margin>
+                                          <Insets left="320.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                <Tab fx:id="changeLcoationTab" text="Change Location">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label text="New Location X">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="30.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="xCoordBox">
+                                       <VBox.margin>
+                                          <Insets left="30.0" right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="New Location Y">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="30.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="yCoordBox">
+                                       <VBox.margin>
+                                          <Insets left="30.0" right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label fx:id="inputErrorLocation" prefHeight="17.0" prefWidth="149.0" text="All inputs must be numeric!" textFill="#b51111" visible="false">
+                                       <VBox.margin>
+                                          <Insets left="280.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="changePriceTab" text="Change Price">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label text="New Price">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="30.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="priceBox">
+                                       <VBox.margin>
+                                          <Insets left="30.0" right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label fx:id="inputErrorPrice" prefHeight="17.0" prefWidth="167.0" text="All inputs must be numeric!" textFill="RED" visible="false">
+                                       <VBox.margin>
+                                          <Insets left="280.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="changeMarketValueTab" text="Change Market Value">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" prefHeight="513.0" prefWidth="683.0" spacing="20.0">
+                                 <children>
+                                    <Label text="New Market Value">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="30.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="marketValueBox">
+                                       <VBox.margin>
+                                          <Insets left="30.0" right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label fx:id="marketValueError" prefHeight="17.0" prefWidth="167.0" text="All inputs must be numeric!" textFill="RED" visible="false">
+                                       <VBox.margin>
+                                          <Insets left="280.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="changeDimensionsTab" text="Change Dimensions">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="729.0" prefWidth="622.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label text="New Width">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="widthBox">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="New Length">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="lengthBox">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="New Height">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="heightBox">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label fx:id="inputErrorDimensions" text="All inputs must be numeric!" textFill="RED" visible="false">
+                                       <padding>
+                                          <Insets left="250.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets left="30.0" />
+                                 </padding>
+                              </VBox>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="addItemTab" text="Add Item">
+                     <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="7.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <padding>
+                                    <Insets left="30.0" />
+                                 </padding>
+                                 <children>
+                                    <Label text="Item Name">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newItemName">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Item Location X">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newItemX">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Item Location Y">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newItemY">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Item Price">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newItemPrice">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Item Market Value">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newItemMarketValue">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Item Width">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newItemWidth">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Item Length">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newItemLength">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Item Height">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newItemHeight">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label fx:id="itemNameNull" text="Please input a name!" textFill="RED" visible="false">
+                                       <VBox.margin>
+                                          <Insets left="285.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="inputErrorAddItem" text="Location, price, and dimensions must be numeric!" textFill="RED" visible="false">
+                                       <padding>
+                                          <Insets left="130.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="addItemContTab" text="Add Item Container">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="7.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <padding>
+                                    <Insets left="30.0" />
+                                 </padding>
+                                 <children>
+                                    <Label text="Item Container Name">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newContainerName">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Item Container Location X">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newContainerX">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Item Container Location Y">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newContainerY">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Item Container Price">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newContainerPrice">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Item Container Width">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newContainerWidth">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Item Container Length">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newContainerLength">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label text="Item Container Height">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="newContainerHeight">
+                                       <VBox.margin>
+                                          <Insets right="150.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Label fx:id="itemContainerNull" text="Please input a name!" textFill="RED" visible="false">
+                                       <VBox.margin>
+                                          <Insets left="285.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="inputErrorAddItemContainer" text="Location, price, and dimension must be numeric!" textFill="RED" visible="false">
+                                       <padding>
+                                          <Insets left="145.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
